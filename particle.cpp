@@ -228,7 +228,7 @@ int particle::preferenceConstraint(int **preference)
 }
 
 
-void particle::fixFitness()
+void particle::sawing()
 {
     int b_index, fitness;
     int count = 0;

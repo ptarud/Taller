@@ -31,7 +31,7 @@ public:
     void setPositionMatrix(int**); //metodo de prueba
     void printCoverageMatrix();
     void printPreferenceMatrix();
-    void fixFitness();
+    void sawing();
 private:
     int **position, **l_best;
     int days, shifts, nurses, fitness, l_fitness;
