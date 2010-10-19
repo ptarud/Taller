@@ -15,10 +15,10 @@ public:
     virtual ~particle();
     int **getPosition();
     void init();
-    void calculateFitness(/*int**,int***/);
+    void calculateFitness();
     int getFitness();
-    int cobertureConstraint(int**); //restriccion de cobertura
-    int daysOffTogether(); //restriccion de dias libres juntos
+    int cobertureConstraint(int**,int); //restriccion de cobertura
+    int daysOffTogether(int); //restriccion de dias libres juntos
     int preferenceConstraint(int**); //restriccion de preferencias de las enfermeras
     void update(int **g_best);
     void printPosition(int nurses, int days, int shifts);
@@ -26,12 +26,13 @@ public:
     void setPsoParameters(float c1, float c2, float r1, float r2, float w);
     void setCoverageMatrix(int**);
     void setPreferenceMatrix(int**);
-    int twoDaysOffPerWeek();
-    int twoShiftsPerDay();
+    int twoDaysOffPerWeek(int);
+    int maxShiftsPerDay(int);
     void setPositionMatrix(int**); //metodo de prueba
     void printCoverageMatrix();
     void printPreferenceMatrix();
     void sawing();
+    void improveFitness(int,int,int);
 private:
     int **position, **l_best;
     int days, shifts, nurses, fitness, l_fitness;

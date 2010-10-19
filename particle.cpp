@@ -10,6 +10,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cmath>
+#define MAX_SHIFTS 2
 
 particle::particle(int nurses, int days, int shifts)
 {
@@ -98,7 +99,7 @@ void particle::init(){
 void particle::calculateFitness()
 {
     /*sumatoria de todas las restricciones */
-    fitness = cobertureConstraint(coverage) + daysOffTogether()  + twoDaysOffPerWeek() + twoShiftsPerDay();
+    fitness = cobertureConstraint(coverage,100) + maxShiftsPerDay(500) + daysOffTogether(50)  + twoDaysOffPerWeek(300);
 
 }
 
@@ -108,9 +109,8 @@ int particle::getFitness()
     return fitness;
 }
 /*restriccion de cobertura (dura)*/
-int particle::cobertureConstraint(int **coverage)
+int particle::cobertureConstraint(int **coverage, int PESO)
 {
-    int PESO = 11111;
     int fitness, cN, cD, cS, count,cDS;
     fitness = 0;
     count = 0;
@@ -120,6 +120,12 @@ int particle::cobertureConstraint(int **coverage)
             /*Sumo todas las enfermeras de mi solucion y comparo con la matriz de cobertura*/
             for(cN = 1; cN <=nurses ; cN++){ //parto de 1 porq la primera fila imprimo numeros ver mejor la matriz
                 count =  count + position[cN][shifts*cD+cS]; //shifts*cD+cS por la forma de la matriz (revisar matriz)
+            }
+            /*comparo si las enfermeras de mis solucion son mas que las que necesito => mejoro solucion inteligentemente*/
+            if(count > coverage[cD][cS]){
+                /*mejoro solucion*/
+                int borrar = count - coverage[cD][cS];
+                improveFitness(borrar,cD,cS);
             }
             /*comparo si las enfermeras de mis solucion son menos que las que necesito => sumo PESO a fitness */
             if(count < coverage[cD][cS]){
@@ -133,10 +139,34 @@ int particle::cobertureConstraint(int **coverage)
     return fitness;
 
 }
+void particle::improveFitness(int borrar, int D, int S){
+    
+    int sum;
+    //int borrados = 0;
+    for(int cN = 1; cN <=nurses ; cN++){
+        sum = 0;
+        for(int cS = 0; cS < shifts; cS++){
+            sum = sum + position[cN][shifts*D+cS];
+        }
+        if(borrar > 0){
+                if(position[cN][shifts*D+S] == 1){
+                    borrar--;
+                    position[cN][shifts*D+S] = 0;
+                }
+
+        }
+    }
+
+
+
+
+}
+
+
 /*restriccion de dos dias libres juntos (blanda)*/
-int particle::daysOffTogether()
+int particle::daysOffTogether(int PESO)
 {
-    int PESO = 500;
+    //int PESO = 500;
     int fitness = 0;
     int sum = 0;
     int count = 0;
@@ -164,9 +194,9 @@ int particle::daysOffTogether()
 
 }
 
-int particle::twoDaysOffPerWeek(){
+int particle::twoDaysOffPerWeek(int PESO){
     int fitness = 0;
-    int PESO = 8888;
+    //int PESO = 8888;
     int count = 0;
     int sum = 0;
     int daysOff = 0;
@@ -192,9 +222,9 @@ int particle::twoDaysOffPerWeek(){
     return fitness;
 }
 
-int particle::twoShiftsPerDay(){
+int particle::maxShiftsPerDay(int PESO){
     int fitness = 0;
-    int PESO = 50000;
+    //int MAX_SHIFTS = 2;
     int count = 0;
     int sum = 0;
 
@@ -205,7 +235,7 @@ int particle::twoShiftsPerDay(){
             count++;
             sum = position[cN][cDS] + sum;
             if(count == shifts){ //si termino un dia
-                if(sum > 2){ //si trabaja mas de un turno diario
+                if(sum > MAX_SHIFTS){ //si trabaja mas de un turno diario
                     fitness = fitness + PESO;
                 }
                 sum = 0;
