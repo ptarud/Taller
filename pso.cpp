@@ -91,7 +91,6 @@ void pso::run(int SIZE, int ITERATIONS)
 
     /*itero ITERATIONS veces*/
     for(t = 0 ; t < ITERATIONS ; t++){
-        //printf("Iteracion : %d\n",t);
         /*obtengo el indice del mejor global y lo guardo en s_best*/
         for(s=0; s < SIZE; s++){
             if(swarm[s]->getFitness() < g_fitness){

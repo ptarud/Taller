@@ -30,6 +30,7 @@ particle::particle(int nurses, int days, int shifts)
     for(cN=0; cN<(nurses+1);cN++){
         l_best[cN] = (int*)malloc(days*shifts*sizeof(int*));
     }
+    daysOffArray = (int*)malloc(nurses*sizeof(int*));
 }
 
 particle::particle(const particle& orig) {
@@ -37,7 +38,7 @@ particle::particle(const particle& orig) {
 
 particle::~particle()
 {
-    /*libero memoria de matrices position y l_best */
+    /*libero memoria de matrices daysOffArray, position y l_best */
      for(int cN=0; cN<(nurses+1);cN++){
         free(position[cN]);
         free(l_best[cN]);
@@ -45,6 +46,7 @@ particle::~particle()
 
      free(position);
      free(l_best);
+     free(daysOffArray);
 }
 
 int **particle::getPosition()
@@ -99,7 +101,7 @@ void particle::init(){
 void particle::calculateFitness()
 {
     /*sumatoria de todas las restricciones */
-    fitness = cobertureConstraint(coverage,100) + maxShiftsPerDay(500) + daysOffTogether(50)  + twoDaysOffPerWeek(300);
+    fitness = cobertureConstraint(coverage,100)  + daysOffTogether(1);// + maxShiftsPerDay(500) + twoDaysOffPerWeek(300);
 
 }
 
@@ -153,42 +155,53 @@ void particle::improveFitness(int borrar, int D, int S){
                     borrar--;
                     position[cN][shifts*D+S] = 0;
                 }
-
         }
     }
-
-
-
-
 }
 
 
 /*restriccion de dos dias libres juntos (blanda)*/
 int particle::daysOffTogether(int PESO)
 {
-    //int PESO = 500;
     int fitness = 0;
     int sum = 0;
     int count = 0;
     int cN, cDS;
     bool hasFirst = false;
+    bool cumple = false;
+    int times = 0;
+    int index = 0;
     for(cN = 1; cN<= nurses ; cN++){
         sum = 0;
+        hasFirst = false; cumple = false;
+        times = 0;
+        index = 0; count = 0;
         for(cDS=0; cDS < days*shifts; cDS++){
             count ++;
             sum = position[cN][cDS] + sum;
             if(count == shifts){ //si ya termino un dia
                 count = 0;
-                if(!hasFirst && sum == 0){ //es un dia libre
+                if(!hasFirst && sum == 0){
                     hasFirst = true;
+                    index = cDS;
                 }
-                if(hasFirst && sum != 0){ //quiere decir que el siguiente dia no es libre
+                if(hasFirst && cDS == (index+shifts) && sum == 0){
                     hasFirst = false;
-                    fitness = fitness + PESO;
+                    index = 0;
+                    cumple = true;
                 }
+                if(hasFirst && sum != 0){
+                    fitness = PESO + fitness;
+                    hasFirst = false;
+                    times++;
+                }
+                
                 sum = 0; //como ya termino un dia hago sum = 0;
             }
         }
+        if(cumple && times > 0){ //quiere decir q ya cumplio la restriccion una vez entonces resto penalizacion
+                fitness = fitness - times*PESO;
+            }
     }
     return fitness;
 
@@ -196,13 +209,15 @@ int particle::daysOffTogether(int PESO)
 
 int particle::twoDaysOffPerWeek(int PESO){
     int fitness = 0;
-    //int PESO = 8888;
     int count = 0;
     int sum = 0;
-    int daysOff = 0;
+    int daysOff;
+    int nurse;
     for(int cN = 1; cN <=nurses ; cN++){
+        daysOff = 100; //para que  no entre al if que viene
         if(daysOff< 2){
             fitness = fitness + PESO;
+            nurse = cN;
         }
         daysOff = 0;
         for(int cDS = 0; cDS < days*shifts ; cDS++){
@@ -217,14 +232,34 @@ int particle::twoDaysOffPerWeek(int PESO){
                 sum = 0;
             }
         }
+        improveResult(nurse);
     }
 
     return fitness;
 }
 
+/*movimiento que arregla la violación de la restricción dura de 2 dias a la semana libres*/
+void particle::improveResult(int nurse){
+    
+    int count;
+    int sum;
+    for(int cN = 1 ; cN <= nurses ; cN++){
+        sum = 0; count = 0;
+        for(int cDS = 0 ; cDS < days*shifts ; cDS++){
+            count++;
+            sum = sum + position[cN][cDS];
+            if(count == shifts){ //si ya terminó un día
+                count = 0;
+                
+
+
+            }
+        }
+    }
+}
+
 int particle::maxShiftsPerDay(int PESO){
     int fitness = 0;
-    //int MAX_SHIFTS = 2;
     int count = 0;
     int sum = 0;
 
@@ -249,6 +284,7 @@ int particle::maxShiftsPerDay(int PESO){
 }
 
 
+
 /*restriccion de preferencia de las enfermeras (blanda)*/
 int particle::preferenceConstraint(int **preference)
 {
@@ -265,7 +301,6 @@ void particle::sawing()
     int sum = 0;
     for(int cDS = 0 ; cDS < nurses*shifts ; cDS++){
         for(int cN = 1; cN < nurses; cN++){
-
             sum = sum + position[cN][cDS];
             /*calculo el fitness de una enfermera*/
             if(count == shifts){
@@ -273,12 +308,8 @@ void particle::sawing()
                 sum = 0;
 
             }
-
         }
     }
-
-
-
 }
 /*actualizacion de posicion y velocidad*/
 void particle::update(int **g_best)

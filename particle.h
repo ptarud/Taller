@@ -33,12 +33,14 @@ public:
     void printPreferenceMatrix();
     void sawing();
     void improveFitness(int,int,int);
+    void improveResult(int);
 private:
     int **position, **l_best;
     int days, shifts, nurses, fitness, l_fitness;
     float v_0, v_1, d1_0, d1_1, d2_0, d2_1;
     float w, c1, r1, c2, r2; //pso parameters
     int **coverage, **preference;
+    int *daysOffArray;
 };
 
 #endif	/* PARTICLE_H */
