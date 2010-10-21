@@ -10,7 +10,7 @@
 #include <iostream>
 #include <cstdio>
 #include <cmath>
-#define MAX_SHIFTS 2
+#define MAX_SHIFTS 1
 #define MIN_DAYS_OFF 2
 
 particle::particle(int nurses, int days, int shifts)
@@ -105,7 +105,7 @@ void particle::calculateFitness()
     cobertureConstraint(coverage);
     minDaysOffPerWeek();
     /*sumatoria de todas las restricciones blandas*/
-    fitness =  daysOffTogether(1) ;
+    fitness =  daysOffTogether(3) + maxShiftsPerDay(15);
 
 }
 
@@ -222,12 +222,7 @@ void particle::minDaysOffPerWeek(){
         }
         daysOffArray[cN-1] = daysOff; //guardo cuantos dias libres tiene la enfermera cN
     }
-    //printf("ANTES DEL CAMBIO\n\n");
-    //this->printPosition(nurses,days,shifts);
-    //printf("\n");
     improveResult2();
-    //printf("DESPUES DEL CAMBIO\n\n");
-    //printPosition(nurses,days,shifts);
 }
 
 /*movimiento que arregla la violación de la restricción dura de 2 dias a la semana libres*/
