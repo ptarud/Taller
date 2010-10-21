@@ -17,7 +17,7 @@ public:
     void init();
     void calculateFitness();
     int getFitness();
-    int cobertureConstraint(int**,int); //restriccion de cobertura
+    void cobertureConstraint(int**); //restriccion de cobertura
     int daysOffTogether(int); //restriccion de dias libres juntos
     int preferenceConstraint(int**); //restriccion de preferencias de las enfermeras
     void update(int **g_best);
@@ -26,14 +26,14 @@ public:
     void setPsoParameters(float c1, float c2, float r1, float r2, float w);
     void setCoverageMatrix(int**);
     void setPreferenceMatrix(int**);
-    int twoDaysOffPerWeek(int);
+    void minDaysOffPerWeek();
     int maxShiftsPerDay(int);
     void setPositionMatrix(int**); //metodo de prueba
     void printCoverageMatrix();
     void printPreferenceMatrix();
-    void sawing();
-    void improveFitness(int,int,int);
-    void improveResult(int);
+    void improveResult1(int,int,int);
+    void improveResult2();
+    void swapDay(int,int);
 private:
     int **position, **l_best;
     int days, shifts, nurses, fitness, l_fitness;

@@ -110,8 +110,8 @@ void pso::run(int SIZE, int ITERATIONS)
         }
     }
     /*imprimo resultados*/
-    printf("\t\t\t\tBEST SOLUTION\n\n");
-    printf("\tFitness: %d\n\n",g_fitness);
+    //printf("\t\t\t\tBEST SOLUTION\n\n");
+    //printf("\tFitness: %d\n\n",g_fitness);
     printf("\tSolution:");
     printGBest();
 
