@@ -222,12 +222,12 @@ void particle::minDaysOffPerWeek(){
         }
         daysOffArray[cN-1] = daysOff; //guardo cuantos dias libres tiene la enfermera cN
     }
-    printf("ANTES DEL CAMBIO\n\n");
-    this->printPosition(nurses,days,shifts);
-    printf("\n");
+    //printf("ANTES DEL CAMBIO\n\n");
+    //this->printPosition(nurses,days,shifts);
+    //printf("\n");
     improveResult2();
-    printf("DESPUES DEL CAMBIO\n\n");
-    printPosition(nurses,days,shifts);
+    //printf("DESPUES DEL CAMBIO\n\n");
+    //printPosition(nurses,days,shifts);
 }
 
 /*movimiento que arregla la violación de la restricción dura de 2 dias a la semana libres*/
