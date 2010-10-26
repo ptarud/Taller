@@ -284,7 +284,7 @@ int particle::maxShiftsPerDay(int PESO){
     for(int cN = 1; cN <=nurses ; cN++){
         sum = 0;
         count = 0;
-       for(int cDS = 0; cDS < days*shifts ; cDS++){
+        for(int cDS = 0; cDS < days*shifts ; cDS++){
             count++;
             sum = position[cN][cDS] + sum;
             if(count == shifts){ //si termino un dia
@@ -300,8 +300,12 @@ int particle::maxShiftsPerDay(int PESO){
 
     return fitness;
 }
+/*Reparo día que tenga mas de los turnos permitidos diarios*/
+void particle::fixDay(int nurse, int day, int borrar){
+    
 
 
+}
 
 /*restriccion de preferencia de las enfermeras (blanda)*/
 int particle::preferenceConstraint(int **preference)
