@@ -27,7 +27,7 @@ public:
     void setCoverageMatrix(int**);
     void setPreferenceMatrix(int**);
     void minDaysOffPerWeek();
-    int maxShiftsPerDay(int);
+    void maxShiftsPerDay();
     void setPositionMatrix(int**); //metodo de prueba
     void printCoverageMatrix();
     void printPreferenceMatrix();
@@ -42,6 +42,7 @@ private:
     float w, c1, r1, c2, r2; //pso parameters
     int **coverage, **preference;
     int *daysOffArray;
+    int shift_hours[4];
 };
 
 #endif	/* PARTICLE_H */

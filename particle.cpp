@@ -32,6 +32,11 @@ particle::particle(int nurses, int days, int shifts)
         l_best[cN] = (int*)malloc(days*shifts*sizeof(int*));
     }
     daysOffArray = (int*)malloc(nurses*sizeof(int*));
+
+    shift_hours[0] = 8;
+    shift_hours[1] = 12;
+    shift_hours[2] = 12;
+    shift_hours[3] = 8;
 }
 
 particle::particle(const particle& orig) {
@@ -104,8 +109,9 @@ void particle::calculateFitness()
     /*restricciones duras son arregladas por movimientos*/
     cobertureConstraint(coverage);
     minDaysOffPerWeek();
+    maxShiftsPerDay();
     /*sumatoria de todas las restricciones blandas*/
-    fitness =  daysOffTogether(3) + maxShiftsPerDay(15);
+    fitness =  daysOffTogether(5);
 
 }
 
@@ -230,20 +236,17 @@ void particle::improveResult2(){ /*swap turno de un dia con otra enfermera q cum
 
     int sum, day;
     int count = 0;
-    //int cambiar = 0;
     int src;
     for(src = 0; src < nurses ; src++){
         day = 0; sum = 0; count = 0;
         /*mientras la enfermera no cumple la restriccion le cambio un dia con una enfermera que si cumpla y pueda*/
         while(daysOffArray[src] < MIN_DAYS_OFF){
-            //printf("daysOffArray[%d] = %d\n",src,daysOffArray[src]);
             daysOffArray[src] = daysOffArray[src] + 1;
             /*busco una enfermera que tenga mas dias libres y le hago un swap de ese dia*/
             for(int dest = 0; dest < nurses ; dest++){
                 while(daysOffArray[dest] > MIN_DAYS_OFF){
                     daysOffArray[dest] = daysOffArray[dest] - 1;
                     swapDay(src,dest);
-                    //printf("cambie enfermera %d por enfermera %d\n",dest,src);
                 }
             }
         }
@@ -276,35 +279,63 @@ void particle::swapDay(int nurseSrc, int nurseDest){
 
 }
 
-int particle::maxShiftsPerDay(int PESO){
-    int fitness = 0;
-    int count = 0;
-    int sum = 0;
+void particle::maxShiftsPerDay(){
+   int day, sum, count;
 
-    for(int cN = 1; cN <=nurses ; cN++){
-        sum = 0;
-        count = 0;
+   for(int cN = 1; cN <=nurses ; cN++){
+        sum = 0; count = 0; day = 0;
         for(int cDS = 0; cDS < days*shifts ; cDS++){
             count++;
             sum = position[cN][cDS] + sum;
             if(count == shifts){ //si termino un dia
                 if(sum > MAX_SHIFTS){ //si trabaja mas de los turnos permitidos diarios
-                    fitness = fitness + PESO;
+                    fixDay(cN, day, (sum - MAX_SHIFTS));
                 }
                 sum = 0;
                 count = 0;
+                day++;
             }
         }
 
     }
-
-    return fitness;
 }
+
 /*Reparo día que tenga mas de los turnos permitidos diarios*/
 void particle::fixDay(int nurse, int day, int borrar){
-    
-
-
+    int d,sum,count;
+    bool cambie;
+    /*mientras no he cambiado todos los turnos*/
+    while(borrar > 0){
+        borrar--;
+        /*busco alguna enfermera que tenga mas de los minimos dias off dias offs*/
+        for(int cN = nurse+1; cN <= nurses; cN++){
+            d = 0; sum = 0; count = 0; cambie = false;
+            if(daysOffArray[cN - 1] > MIN_DAYS_OFF){
+                for(int cDS = 0; cDS < days*shifts ; cDS++){
+                    count++;
+                    sum = position[cN][cDS] + sum;
+                    if(count == shifts){
+                        /*si es el mismo dia que quiero cambiar y es libre */
+                        if(day == d && sum == 0){
+                            /*lo cambio*/
+                            for(int s = 0; s < shifts; s++){
+                                if(position[nurse][d*shifts + s] == 1 && !cambie){
+                                    position[nurse][d*shifts + s] = 0;
+                                    position[cN][d*shifts + s] = 1;
+                                    daysOffArray[cN-1] = daysOffArray[cN-1] - 1;
+                                    cambie = true;
+                                }
+                            }
+                        }
+                        sum = 0;
+                        count = 0;
+                        d++;
+                        cambie = false;
+                    }
+                }
+            }
+        }
+    }
 }
 
 /*restriccion de preferencia de las enfermeras (blanda)*/
