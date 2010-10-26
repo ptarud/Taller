@@ -12,6 +12,10 @@
 #include <cmath>
 #define MAX_SHIFTS 1
 #define MIN_DAYS_OFF 2
+#define DS 0
+#define EDS 1
+#define ENS 2
+#define PS 3
 
 particle::particle(int nurses, int days, int shifts)
 {
@@ -33,10 +37,10 @@ particle::particle(int nurses, int days, int shifts)
     }
     daysOffArray = (int*)malloc(nurses*sizeof(int*));
 
-    shift_hours[0] = 8;
-    shift_hours[1] = 12;
-    shift_hours[2] = 12;
-    shift_hours[3] = 8;
+    shift_hours[DS] = 8;
+    shift_hours[EDS] = 12;
+    shift_hours[ENS] = 12;
+    shift_hours[PS] = 8;
 }
 
 particle::particle(const particle& orig) {
@@ -332,6 +336,23 @@ void particle::fixDay(int nurse, int day, int borrar){
                         d++;
                         cambie = false;
                     }
+                }
+            }
+        }
+    }
+}
+
+void particle::maxNightShifts(){
+    
+    int sum;
+
+    for(int cN = 1; cN <=nurses ; cN++){
+        sum = 0;
+        for(int cD = 0; cD < days ; days++){
+            for(int cS = 0; cS < shifts ; cS++){
+                if(cS == ENS){
+                    sum++;
+
                 }
             }
         }

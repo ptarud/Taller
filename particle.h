@@ -35,6 +35,7 @@ public:
     void improveResult2();
     void swapDay(int,int);
     void fixDay(int,int,int);
+    void maxNightShifts();
 private:
     int **position, **l_best;
     int days, shifts, nurses, fitness, l_fitness;
