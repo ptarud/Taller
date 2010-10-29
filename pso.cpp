@@ -80,7 +80,7 @@ void pso::run(int SIZE, int ITERATIONS)
         swarm[s]->setCoverageMatrix(coverage);
         swarm[s]->setPreferenceMatrix(preference);
         swarm[s]->init();
-   }
+    }
     g_fitness = swarm[s_best]->getFitness();
    /*copio la informacion del mejor global a g_best */
     for(cN = 0; cN <= nurses; cN++){
@@ -110,6 +110,8 @@ void pso::run(int SIZE, int ITERATIONS)
         }
     }
     /*imprimo resultados*/
+    printf("PREFERENCE MATRIX\n");
+    swarm[0]->printPreferenceMatrix();
     printf("\t\t\t\tBEST SOLUTION\n\n");
     printf("\tFitness: %d\n\n",g_fitness);
     printf("\tSolution:");

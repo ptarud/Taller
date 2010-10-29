@@ -27,7 +27,7 @@ public:
     void setCoverageMatrix(int**);
     void setPreferenceMatrix(int**);
     void minDaysOffPerWeek();
-    void maxShiftsPerDay();
+    int maxShiftsPerDay(int);
     void setPositionMatrix(int**); //metodo de prueba
     void printCoverageMatrix();
     void printPreferenceMatrix();
@@ -35,7 +35,9 @@ public:
     void improveResult2();
     void swapDay(int,int);
     void fixDay(int,int,int);
-    void maxNightShifts();
+    void repairFitness(int,int,int,int);
+    //void fixDay2();
+    int maxNightShifts(int);
 private:
     int **position, **l_best;
     int days, shifts, nurses, fitness, l_fitness;

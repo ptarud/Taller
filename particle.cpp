@@ -11,6 +11,7 @@
 #include <cstdio>
 #include <cmath>
 #define MAX_SHIFTS 1
+#define MAX_ENS 3
 #define MIN_DAYS_OFF 2
 #define DS 0
 #define EDS 1
@@ -110,12 +111,11 @@ void particle::init(){
 /*cálculo del valor fitness*/
 void particle::calculateFitness()
 {
-    /*restricciones duras son arregladas por movimientos*/
     cobertureConstraint(coverage);
     minDaysOffPerWeek();
-    maxShiftsPerDay();
-    /*sumatoria de todas las restricciones blandas*/
-    fitness =  daysOffTogether(5);
+    
+    /*sumatoria de restricciones blandas y duras si se viola una dura es arreglada por movimiento en la sgte iteracion */
+    fitness =  daysOffTogether(5) + maxShiftsPerDay(20) + maxNightShifts(45) + preferenceConstraint(preference);
 
 }
 
@@ -282,9 +282,10 @@ void particle::swapDay(int nurseSrc, int nurseDest){
     }
 
 }
-
-void particle::maxShiftsPerDay(){
+/*restriccion de maximos turnos por dia definido arriba*/
+int particle::maxShiftsPerDay(int PESO){
    int day, sum, count;
+   int fitness = 0;
 
    for(int cN = 1; cN <=nurses ; cN++){
         sum = 0; count = 0; day = 0;
@@ -293,6 +294,7 @@ void particle::maxShiftsPerDay(){
             sum = position[cN][cDS] + sum;
             if(count == shifts){ //si termino un dia
                 if(sum > MAX_SHIFTS){ //si trabaja mas de los turnos permitidos diarios
+                    fitness = fitness + PESO;//printPosition(nurses,days,shifts);
                     fixDay(cN, day, (sum - MAX_SHIFTS));
                 }
                 sum = 0;
@@ -302,6 +304,7 @@ void particle::maxShiftsPerDay(){
         }
 
     }
+    return fitness;
 }
 
 /*Reparo día que tenga mas de los turnos permitidos diarios*/
@@ -323,7 +326,7 @@ void particle::fixDay(int nurse, int day, int borrar){
                         if(day == d && sum == 0){
                             /*lo cambio*/
                             for(int s = 0; s < shifts; s++){
-                                if(position[nurse][d*shifts + s] == 1 && !cambie){
+                                if(position[nurse][d*shifts + s] == 1 && cambie == false){
                                     position[nurse][d*shifts + s] = 0;
                                     position[cN][d*shifts + s] = 1;
                                     daysOffArray[cN-1] = daysOffArray[cN-1] - 1;
@@ -342,30 +345,103 @@ void particle::fixDay(int nurse, int day, int borrar){
     }
 }
 
-void particle::maxNightShifts(){
+/*restriccion de maximos turnos noches por semana*/
+int particle::maxNightShifts(int PESO){
     
     int sum;
+    int fitness = 0;
+    int day;
 
     for(int cN = 1; cN <=nurses ; cN++){
-        sum = 0;
-        for(int cD = 0; cD < days ; days++){
-            for(int cS = 0; cS < shifts ; cS++){
-                if(cS == ENS){
-                    sum++;
-
-                }
+        sum = 0; day = 0;
+        for(int cD = 0; cD < days; cD++){
+            if(position[cN][cD*days + ENS] == 1){
+                sum++;
             }
         }
+        if(sum > MAX_ENS){
+            fitness = fitness + PESO;
+        }
+        
     }
+
+    return fitness;
 }
+
+/*void particle::fixDay2(){
+
+
+
+
+} */
 
 /*restriccion de preferencia de las enfermeras (blanda)*/
 int particle::preferenceConstraint(int **preference)
 {
+    int count = 0;
     int fitness = 0;
+    int day = 0;
+    for(int cN = 1; cN <= nurses ; cN++){
+        count = 0; day = 0;
+        for(int cDS = 0; cDS < days*shifts ; cDS++){
+            count++;
+            if(count == shifts){
+                day++;
+                count = 0;
+            }
+            if(position[cN][cDS] == 1){
+                if(preference[cN-1][cDS] == 3){
+                    fitness = fitness + 5;
+                }else if(preference[cN-1][cDS] == 2){
+                    fitness = fitness + 10;
+                }else if(preference[cN-1][cDS] == 1){
+                    fitness = fitness + 15;
+                }
+            }
+        }
+    }
     
     return fitness;
 }
+/*mejoro fitness de preferencias de las enfermeras trato de asignarle el turno con mayor preferencia en la siguiente iteracion*/
+void particle::repairFitness(int day, int nurseSrc, int nurseDest, int shift)
+{
+    int bestNurse = 1; //indice de la enfermera con el mejor bestPreference para hacer el swap
+    int bestPreference = 0; //variable que conoce la mejor preferencia encontrada hasta el momento
+    int day = 0;
+
+    /*busco enfermera destino para cambiarle el dia-turno*/
+    for(int cN = 1; cN <= nurses; cN++){
+        if(preference[cN-1][day*shifts + shift] == 4){
+            /*hago el cambio */
+            int aux = position[cN][day*shifts + shift];
+            position[cN][day*shifts + shift] = position[nurseSrc][day*shifts + shift];
+            position[nurseSrc][day*shifts + shift] = aux;
+            return;
+        }else if(preference[cN-1][day*shifts + shift] == 3){
+            if(bestPreference < 3){
+                bestPreference = 3;
+                bestNurse = cN;
+            }
+        }else if(preference[cN-1][day*shifts + shift] == 2){
+            if(bestPreference < 2){
+                bestPreference = 2;
+                bestNurse = cN;
+            }
+        }else if(preference[cN-1][day*shifts + shift] == 1){
+            if(bestPreference < 1){
+                bestPreference = 1;
+                bestNurse = cN;
+            }
+        }
+    }
+    /*cambiar a con el mejor fitness y tengo el index tb de la enfermera*/
+    int aux = position[bestNurse][day*shifts + shift];
+    position[bestNurse][day*shifts + shift] = position[nurseSrc][day*shifts + shift];
+    position[nurseSrc][day*shifts + shift] = aux;
+    return;
+}
+
 
 
 /*actualizacion de posicion y velocidad*/
