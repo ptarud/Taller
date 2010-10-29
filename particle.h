@@ -35,7 +35,7 @@ public:
     void improveResult2();
     void swapDay(int,int);
     void fixDay(int,int,int);
-    void repairFitness(int,int,int,int);
+    void repairFitness(int,int,int);
     //void fixDay2();
     int maxNightShifts(int);
 private:
@@ -46,6 +46,7 @@ private:
     int **coverage, **preference;
     int *daysOffArray;
     int shift_hours[4];
+    int **shiftsPerDayArray;
 };
 
 #endif	/* PARTICLE_H */

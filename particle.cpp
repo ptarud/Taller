@@ -36,7 +36,15 @@ particle::particle(int nurses, int days, int shifts)
     for(cN=0; cN<(nurses+1);cN++){
         l_best[cN] = (int*)malloc(days*shifts*sizeof(int*));
     }
+    
+    /*asigno memoria a arreglo que conoce los dias off de cada enfermera*/
     daysOffArray = (int*)malloc(nurses*sizeof(int*));
+
+    /*asigno memoria a arreglo que conoce los turnos usados por cada dia en cada enfermera*/
+    shiftsPerDayArray = (int**)malloc(nurses*sizeof(int*));
+    for(cN = 0; cN < nurses ; cN++){
+        shiftsPerDayArray[cN] = (int*)malloc(days*sizeof(int*));
+    }
 
     shift_hours[DS] = 8;
     shift_hours[EDS] = 12;
@@ -58,6 +66,7 @@ particle::~particle()
      free(position);
      free(l_best);
      free(daysOffArray);
+     free(shiftsPerDayArray);
 }
 
 int **particle::getPosition()
@@ -115,7 +124,7 @@ void particle::calculateFitness()
     minDaysOffPerWeek();
     
     /*sumatoria de restricciones blandas y duras si se viola una dura es arreglada por movimiento en la sgte iteracion */
-    fitness =  daysOffTogether(5) + maxShiftsPerDay(20) + maxNightShifts(45) + preferenceConstraint(preference);
+    fitness =  daysOffTogether(10) + preferenceConstraint(preference) + maxShiftsPerDay(90) + maxNightShifts(45);
 
 }
 
@@ -173,6 +182,7 @@ int particle::daysOffTogether(int PESO)
     int fitness = 0;
     int sum = 0;
     int count = 0;
+    int day = 0;
     int cN, cDS;
     bool hasFirst = false;
     bool cumple = false;
@@ -181,13 +191,12 @@ int particle::daysOffTogether(int PESO)
     for(cN = 1; cN<= nurses ; cN++){
         sum = 0;
         hasFirst = false; cumple = false;
-        times = 0;
+        times = 0; day = 0;
         index = 0; count = 0;
         for(cDS=0; cDS < days*shifts; cDS++){
             count ++;
             sum = position[cN][cDS] + sum;
             if(count == shifts){ //si ya termino un dia
-                count = 0;
                 if(!hasFirst && sum == 0){
                     hasFirst = true;
                     index = cDS;
@@ -202,7 +211,9 @@ int particle::daysOffTogether(int PESO)
                     hasFirst = false;
                     times++;
                 }
-                
+                shiftsPerDayArray[cN-1][day] = sum; //le paso cuantos turnos tiene para eso dia 
+                day++;
+                count = 0;
                 sum = 0; //como ya termino un dia hago sum = 0;
             }
         }
@@ -326,7 +337,7 @@ void particle::fixDay(int nurse, int day, int borrar){
                         if(day == d && sum == 0){
                             /*lo cambio*/
                             for(int s = 0; s < shifts; s++){
-                                if(position[nurse][d*shifts + s] == 1 && cambie == false){
+                                if(position[nurse][d*shifts + s] == 1 && !cambie){
                                     position[nurse][d*shifts + s] = 0;
                                     position[cN][d*shifts + s] = 1;
                                     daysOffArray[cN-1] = daysOffArray[cN-1] - 1;
@@ -392,10 +403,13 @@ int particle::preferenceConstraint(int **preference)
             if(position[cN][cDS] == 1){
                 if(preference[cN-1][cDS] == 3){
                     fitness = fitness + 5;
+                    repairFitness(day,cN,count-1);
                 }else if(preference[cN-1][cDS] == 2){
                     fitness = fitness + 10;
+                    repairFitness(day,cN,count-1);
                 }else if(preference[cN-1][cDS] == 1){
                     fitness = fitness + 15;
+                    repairFitness(day,cN,count-1);
                 }
             }
         }
@@ -404,31 +418,30 @@ int particle::preferenceConstraint(int **preference)
     return fitness;
 }
 /*mejoro fitness de preferencias de las enfermeras trato de asignarle el turno con mayor preferencia en la siguiente iteracion*/
-void particle::repairFitness(int day, int nurseSrc, int nurseDest, int shift)
+void particle::repairFitness(int day, int nurseSrc, int shift)
 {
     int bestNurse = 1; //indice de la enfermera con el mejor bestPreference para hacer el swap
     int bestPreference = 0; //variable que conoce la mejor preferencia encontrada hasta el momento
-    int day = 0;
 
     /*busco enfermera destino para cambiarle el dia-turno*/
     for(int cN = 1; cN <= nurses; cN++){
-        if(preference[cN-1][day*shifts + shift] == 4){
+        if(preference[cN-1][day*shifts + shift] == 4 && shiftsPerDayArray[cN-1][day] < MAX_SHIFTS){
             /*hago el cambio */
             int aux = position[cN][day*shifts + shift];
             position[cN][day*shifts + shift] = position[nurseSrc][day*shifts + shift];
             position[nurseSrc][day*shifts + shift] = aux;
             return;
-        }else if(preference[cN-1][day*shifts + shift] == 3){
+        }else if(preference[cN-1][day*shifts + shift] == 3 && shiftsPerDayArray[cN-1][day] < MAX_SHIFTS){
             if(bestPreference < 3){
                 bestPreference = 3;
                 bestNurse = cN;
             }
-        }else if(preference[cN-1][day*shifts + shift] == 2){
+        }else if(preference[cN-1][day*shifts + shift] == 2 && shiftsPerDayArray[cN-1][day] < MAX_SHIFTS){
             if(bestPreference < 2){
                 bestPreference = 2;
                 bestNurse = cN;
             }
-        }else if(preference[cN-1][day*shifts + shift] == 1){
+        }else if(preference[cN-1][day*shifts + shift] == 1 && shiftsPerDayArray[cN-1][day] < MAX_SHIFTS){
             if(bestPreference < 1){
                 bestPreference = 1;
                 bestNurse = cN;
@@ -565,18 +578,25 @@ void particle::printCoverageMatrix()
     for(cD=0;cD<days;cD++){
         printf("\n");
         for(cS=0;cS<shifts;cS++){
-            printf("%d\t",coverage[cD][cS]);
+            printf("%d  ",coverage[cD][cS]);
         }
     }
+    printf("\n");
 }
 
 void particle::printPreferenceMatrix()
 {
-    int cN,cDS;
-    for(cN=0;cN<nurses;cN++){
-        printf("\n");
-        for(cDS=0;cDS<(shifts*days);cDS++){
-            printf("%d\t",preference[cN][cDS]);
+    int count = 0;
+    for(int cN = 0; cN < nurses; cN++){
+        printf("\n\t");
+        for(int cDS = 0; cDS < days*shifts ; cDS++){
+            count ++;
+            printf("%d  ", preference[cN][cDS]);
+            if(count == shifts){
+                printf("\t");
+                count = 0;
+            }
         }
     }
+    printf("\n");
 }
