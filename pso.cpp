@@ -10,6 +10,9 @@
 #include <iostream>
 #include "particle.h"
 #include <cstdio>
+#include <fstream>
+
+using namespace std;
 
 pso::pso(int nurses, int days, int shifts)
 {
@@ -109,13 +112,17 @@ void pso::run(int SIZE, int ITERATIONS)
         }
     }
     /*imprimo resultados*/
-    printf("PREFERENCE MATRIX\n");
-    swarm[0]->printPreferenceMatrix();
+    //printf("PREFERENCE MATRIX\n");
+    //swarm[0]->printPreferenceMatrix();
     printf("\t\t\t\tBEST SOLUTION\n\n");
     printf("\tFitness: %d\n\n",g_fitness);
     printf("\tSolution:");
     printGBest();
-
+    /*escribo en un archivo el fitness*/
+    ofstream data("output.res");
+    data << g_fitness << endl;
+    data.close();
+    
     /*libero memoria reservada al enjambre*/
     for(s=0; s < SIZE; s++){
         delete swarm[s];

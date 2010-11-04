@@ -1,2 +1,0 @@
-time ./paramils -numRun 4 -maxEvals 1000 -maxIts 1000 -approach focused -N 1000 -userunlog 1 -validN 50 -pruning 0 -scenariofile files/scenario-data6.scn > ParamILS-data6.out 
-

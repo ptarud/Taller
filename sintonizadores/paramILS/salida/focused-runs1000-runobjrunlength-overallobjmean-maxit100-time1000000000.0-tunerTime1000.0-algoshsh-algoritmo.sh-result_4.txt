@@ -1,6 +1,0 @@
-Final best parameter configuration: FACT_COG=0.2, FACT_SOC=0.5, INERTIA=0.2
-==================================================================
-Active parameters: FACT_COG=0.2, FACT_SOC=0.5, INERTIA=0.2
-==================================================================
-Training quality of this final best found parameter configuration: 0.0, based on 31 runs with cutoff 1000000000.0
-Test quality of this final best found parameter configuration: 0.0, based on 50 independent runs with cutoff 1000000000.0
