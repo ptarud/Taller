@@ -1,0 +1,12 @@
+algo = sh sh-algoritmo.sh
+execdir = 
+deterministic = 0
+run_obj = runlength
+overall_obj = mean
+cutoff_time = max
+cutoff_length = max
+tunerTimeout = 10
+paramfile = params.params
+outdir = salida
+instance_file = instancia.cnf
+test_instance_file = instancia.cnf

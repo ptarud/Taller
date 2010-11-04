@@ -1,0 +1,366 @@
+Call: /usr/bin/ruby ../scripts/param_ils_2_2_run.rb "-numRun" "4" "-maxEvals" "100" "-maxIts" "100" "-approach" "focused" "-N" "1000" "-userunlog" "1" "-validN" "50" "-pruning" "0" "-scenariofile" "scenario-instancia.scn"
+
+
+seed: 6170
+algo: sh sh-algoritmo.sh
+tunerTimeout: 10.0
+maxEvals: 100
+run_obj: runlength
+overall_obj: mean
+instance_file: instancia.cnf
+test_instance_file: instancia.cnf
+N: 1000
+cutoff_time: 1000000000.0
+cutoff_length: 2147483647
+R: 10
+pertubation_strength_basic: 
+pertubation_strength_scaling: false
+p_restart: 0.01
+Run 5
+Level 
+========================================================
+Starting ILS for level 1, i.e. a limit of N=1000, and cutoff time=1000000000.0.
+Current CPU time = 0, this run goes until 10.0 
+========================================================
+New Incumbent: 0, 100000000 [0, 0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+ Same incumbent, new precision:
+New Incumbent: 0.1, 0.0 [1, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+          -> Take improving step to random FACT_COG=0.6 FACT_SOC=1.0 INERTIA=0.8 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random FACT_COG=0.0 FACT_SOC=0.9 INERTIA=1.0 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random FACT_COG=0.3 FACT_SOC=0.5 INERTIA=1.0 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random FACT_COG=0.0 FACT_SOC=0.7 INERTIA=0.1 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random FACT_COG=0.7 FACT_SOC=0.1 INERTIA=0.2 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random FACT_COG=1.0 FACT_SOC=0.8 INERTIA=0.4 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random FACT_COG=0.0 FACT_SOC=0.5 INERTIA=0.8 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random FACT_COG=0.7 FACT_SOC=0.9 INERTIA=0.3 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random FACT_COG=0.8 FACT_SOC=0.7 INERTIA=0.0 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+          -> Take improving step to random FACT_COG=0.2 FACT_SOC=0.1 INERTIA=0.2 (0.0 [based on 1 runs with cutoff 1000000000.0])
+
+   BLS in iteration 1, start with FACT_COG=0.2 FACT_SOC=0.1 INERTIA=0.2 (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_SOC: 0.1->0.5, evaluating ...
+          -> Take improving step to neighbour FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 1 runs with cutoff 1000000000.0]) with flip 1
+
+          
+============= Performing 1 bonus runs of state: FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 1 runs with cutoff 1000000000.0]) ============ 
+
+State wants more detail (1+1) than incumbent (1), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 1 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 1 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 1.3, 0.0 [2, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+          -> After 1 bonus runs: FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 2 runs with cutoff 1000000000.0])
+
+    Changing FACT_SOC: 0.5->0.0, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->1.0, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->0.4, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->0.5, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->0.8, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_SOC: 0.5->0.7, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->0.3, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->0.9, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->0.0, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->0.9, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_SOC: 0.5->0.4, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_SOC: 0.5->0.6, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_SOC: 0.5->0.2, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->0.1, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->0.7, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->0.3, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->1.0, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_SOC: 0.5->1.0, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_SOC: 0.5->0.9, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->0.0, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_SOC: 0.5->0.8, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->0.6, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->0.4, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->0.6, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_SOC: 0.5->0.3, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->0.5, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->0.7, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing FACT_COG: 0.2->0.1, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+    Changing INERTIA: 0.2->0.8, evaluating ...
+        -> worse: (0.0 [based on 1 runs with cutoff 1000000000.0])
+          
+============= Performing 29 bonus runs of state: FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 2 runs with cutoff 1000000000.0]) ============ 
+
+State wants more detail (2+1) than incumbent (2), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 2 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 2 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 4.4, 0.0 [3, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (3+1) than incumbent (3), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 3 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 3 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 4.6, 0.0 [4, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (4+1) than incumbent (4), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 4 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 4 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 4.8, 0.0 [5, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (5+1) than incumbent (5), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 5 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 5 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 5.0, 0.0 [6, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (6+1) than incumbent (6), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 6 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 6 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 5.2, 0.0 [7, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (7+1) than incumbent (7), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 7 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 7 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 5.4, 0.0 [8, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (8+1) than incumbent (8), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 8 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 8 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 5.6, 0.0 [9, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (9+1) than incumbent (9), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 9 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 9 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 5.8, 0.0 [10, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (10+1) than incumbent (10), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 10 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 10 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 5.99999999999999, 0.0 [11, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (11+1) than incumbent (11), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 11 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 11 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 6.19999999999999, 0.0 [12, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (12+1) than incumbent (12), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 12 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 12 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 6.39999999999999, 0.0 [13, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (13+1) than incumbent (13), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 13 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 13 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 6.59999999999999, 0.0 [14, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (14+1) than incumbent (14), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 14 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 14 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 6.79999999999999, 0.0 [15, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (15+1) than incumbent (15), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 15 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 15 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 6.99999999999999, 0.0 [16, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (16+1) than incumbent (16), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 16 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 16 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 7.19999999999999, 0.0 [17, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (17+1) than incumbent (17), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 17 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 17 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 7.39999999999999, 0.0 [18, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (18+1) than incumbent (18), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 18 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 18 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 7.59999999999999, 0.0 [19, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (19+1) than incumbent (19), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 19 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 19 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 7.79999999999999, 0.0 [20, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (20+1) than incumbent (20), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 20 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 20 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 7.99999999999999, 0.0 [21, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (21+1) than incumbent (21), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 21 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 21 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.19999999999999, 0.0 [22, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (22+1) than incumbent (22), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 22 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 22 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.39999999999999, 0.0 [23, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (23+1) than incumbent (23), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 23 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 23 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.59999999999999, 0.0 [24, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (24+1) than incumbent (24), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 24 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 24 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.79999999999998, 0.0 [25, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (25+1) than incumbent (25), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 25 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 25 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 8.99999999999998, 0.0 [26, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (26+1) than incumbent (26), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 26 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 26 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 9.19999999999998, 0.0 [27, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (27+1) than incumbent (27), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 27 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 27 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 9.39999999999998, 0.0 [28, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (28+1) than incumbent (28), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 28 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 28 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 9.59999999999998, 0.0 [29, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (29+1) than incumbent (29), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 29 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 29 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 9.79999999999998, 0.0 [30, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+State wants more detail (30+1) than incumbent (30), doing incumbent first:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 30 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 30 runs with cutoff 1000000000.0])
+ Same incumbent, new precision:
+New Incumbent: 9.99999999999998, 0.0 [31, 1000000000.0]. With state FACT_COG=0.5, FACT_SOC=0.5, INERTIA=0.5
+101/100, 10.1/10.0
+          -> After 29 bonus runs for LM: FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 31 runs with cutoff 1000000000.0])
+
+   LM for iteration 1: FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 31 runs with cutoff 1000000000.0])
+
+========== DETAILED RESULTS (iteration 1): ==========
+================================================
+
+==================================================================
+Best parameter configuration found so far (end of iteration 1): INERTIA=0.5, FACT_COG=0.5, FACT_SOC=0.5
+==================================================================
+Training quality of this incumbent parameter configuration: 0.0, based on 31 runs with cutoff 1000000000.0
+==================================================================
+
+Comparing LM against incumbent:
+FACT_COG=0.2 FACT_SOC=0.5 INERTIA=0.2 (0.0 [based on 31 runs with cutoff 1000000000.0])
+FACT_COG=0.5 FACT_SOC=0.5 INERTIA=0.5 (0.0 [based on 31 runs with cutoff 1000000000.0])
+LM better, change incumbent
+New Incumbent: 10.1, 0.0 [31, 1000000000.0]. With state FACT_COG=0.2, FACT_SOC=0.5, INERTIA=0.2
+Final solution for depth 1 with limit N=1000, and cutoff time=1000000000.0.
+New Incumbent: 10.1, 0.0 [31, 1000000000.0]. With state FACT_COG=0.2, FACT_SOC=0.5, INERTIA=0.2
+
+==================================================================
+ParamILS is finished.
+==================================================================
+
+Final best parameter configuration found: FACT_COG=0.2, FACT_SOC=0.5, INERTIA=0.2
+==================================================================
+Active parameters: FACT_COG=0.2, FACT_SOC=0.5, INERTIA=0.2
+
+==================================================================
+Training quality of this final best found parameter configuration: 0.0, based on 31 runs with cutoff 1000000000.0
+==================================================================
+
+
+==================================================================
+Computing validation result on independent data -- 50 runs with cutoff time 1000000000.0...
+==================================================================
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7287.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp: 0
+/home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp: 0
+Combined result: 0.0
+
+================================================================
+Final best parameter configuration: FACT_COG=0.2, FACT_SOC=0.5, INERTIA=0.2
+==================================================================
+Active parameters: FACT_COG=0.2, FACT_SOC=0.5, INERTIA=0.2
+
+================================================================
+Training quality of this final best found parameter configuration: 0.0, based on 31 runs with cutoff 1000000000.0
+Test quality of this final best found parameter configuration: 0.0, based on 50 independent runs with cutoff 1000000000.0
+==================================================================

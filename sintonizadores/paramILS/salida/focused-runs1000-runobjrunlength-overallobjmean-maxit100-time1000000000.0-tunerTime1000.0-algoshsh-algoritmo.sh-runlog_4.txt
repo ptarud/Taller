@@ -1,0 +1,453 @@
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.923352241516113
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.8 -FACT_COG 0.6 -FACT_SOC 1.0 > /tmp/tmp-2010-11-0320:46:32-0.0433163642883301
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 1.0 -FACT_COG 0.0 -FACT_SOC 0.9 > /tmp/tmp-2010-11-0320:46:32-0.33159065246582
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 1.0 -FACT_COG 0.3 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.260498046875
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.1 -FACT_COG 0.0 -FACT_SOC 0.7 > /tmp/tmp-2010-11-0320:46:32-0.542856693267822
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.7 -FACT_SOC 0.1 > /tmp/tmp-2010-11-0320:46:32-0.53476095199585
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.4 -FACT_COG 1.0 -FACT_SOC 0.8 > /tmp/tmp-2010-11-0320:46:32-0.134024620056152
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.8 -FACT_COG 0.0 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.624277114868164
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.3 -FACT_COG 0.7 -FACT_SOC 0.9 > /tmp/tmp-2010-11-0320:46:32-0.75634765625
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.0 -FACT_COG 0.8 -FACT_SOC 0.7 > /tmp/tmp-2010-11-0320:46:32-0.0255560874938965
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.1 > /tmp/tmp-2010-11-0320:46:32-0.847237110137939
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.666140556335449
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp "" 1000000000.0 2147483647 1382649263 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.556947708129883
+Result: SAT, 0, , 0, 1382649263
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp "" 1000000000.0 2147483647 1382649263 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.347570896148682
+Result: SAT, 0, , 0, 1382649263
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.0 > /tmp/tmp-2010-11-0320:46:32-0.0933103561401367
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 1.0 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.239288330078125
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.4 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.521665096282959
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.235804557800293
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.8 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.315974712371826
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.7 > /tmp/tmp-2010-11-0320:46:32-0.703127145767212
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.3 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.78271484375
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.9 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.930050373077393
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.0 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.960998773574829
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.9 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.990771293640137
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.4 > /tmp/tmp-2010-11-0320:46:32-0.740258693695068
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.6 > /tmp/tmp-2010-11-0320:46:32-0.765505313873291
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.2 > /tmp/tmp-2010-11-0320:46:32-0.272490978240967
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.1 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.989626884460449
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.7 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.718954563140869
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.3 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.778066635131836
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 1.0 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.415652275085449
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 1.0 > /tmp/tmp-2010-11-0320:46:32-0.0465364456176758
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.9 > /tmp/tmp-2010-11-0320:46:32-0.376361846923828
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.0 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.220175266265869
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.8 > /tmp/tmp-2010-11-0320:46:32-0.112234115600586
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.6 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.228888750076294
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.4 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.98917031288147
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.6 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.491695642471313
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.3 > /tmp/tmp-2010-11-0320:46:32-0.732169151306152
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.5 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.86963963508606
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.7 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.374490261077881
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.2 -FACT_COG 0.1 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.557890176773071
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1824019482 -INERTIA 0.8 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.323500633239746
+Result: SAT, 0, , 0, 1824019482
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp "" 1000000000.0 2147483647 199956864 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.795793056488037
+Result: SAT, 0, , 0, 199956864
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp "" 1000000000.0 2147483647 199956864 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.534105777740479
+Result: SAT, 0, , 0, 199956864
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp "" 1000000000.0 2147483647 1647042398 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0288693904876709
+Result: SAT, 0, , 0, 1647042398
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp "" 1000000000.0 2147483647 1647042398 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.453446388244629
+Result: SAT, 0, , 0, 1647042398
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp "" 1000000000.0 2147483647 809693555 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.796710014343262
+Result: SAT, 0, , 0, 809693555
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp "" 1000000000.0 2147483647 809693555 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.872458934783936
+Result: SAT, 0, , 0, 809693555
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp "" 1000000000.0 2147483647 783720058 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.875501394271851
+Result: SAT, 0, , 0, 783720058
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp "" 1000000000.0 2147483647 783720058 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.555351257324219
+Result: SAT, 0, , 0, 783720058
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp "" 1000000000.0 2147483647 1015740459 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.995559930801392
+Result: SAT, 0, , 0, 1015740459
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp "" 1000000000.0 2147483647 1015740459 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.279000043869019
+Result: SAT, 0, , 0, 1015740459
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp "" 1000000000.0 2147483647 210678961 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.801353931427002
+Result: SAT, 0, , 0, 210678961
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp "" 1000000000.0 2147483647 210678961 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.931081295013428
+Result: SAT, 0, , 0, 210678961
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp "" 1000000000.0 2147483647 2102536241 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.391984701156616
+Result: SAT, 0, , 0, 2102536241
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp "" 1000000000.0 2147483647 2102536241 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.288886785507202
+Result: SAT, 0, , 0, 2102536241
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp "" 1000000000.0 2147483647 1955051339 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.901472806930542
+Result: SAT, 0, , 0, 1955051339
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp "" 1000000000.0 2147483647 1955051339 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.00956034660339355
+Result: SAT, 0, , 0, 1955051339
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp "" 1000000000.0 2147483647 1954633768 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0891060829162598
+Result: SAT, 0, , 0, 1954633768
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp "" 1000000000.0 2147483647 1954633768 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.761149406433105
+Result: SAT, 0, , 0, 1954633768
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp "" 1000000000.0 2147483647 106267632 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.7879958152771
+Result: SAT, 0, , 0, 106267632
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp "" 1000000000.0 2147483647 106267632 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.176760911941528
+Result: SAT, 0, , 0, 106267632
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp "" 1000000000.0 2147483647 887830120 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.259414196014404
+Result: SAT, 0, , 0, 887830120
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp "" 1000000000.0 2147483647 887830120 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.221872329711914
+Result: SAT, 0, , 0, 887830120
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7287.nsp "" 1000000000.0 2147483647 101302345 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.290493726730347
+Result: SAT, 0, , 0, 101302345
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7287.nsp "" 1000000000.0 2147483647 101302345 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.261498212814331
+Result: SAT, 0, , 0, 101302345
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp "" 1000000000.0 2147483647 1350317325 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.157950162887573
+Result: SAT, 0, , 0, 1350317325
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp "" 1000000000.0 2147483647 1350317325 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.219086885452271
+Result: SAT, 0, , 0, 1350317325
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp "" 1000000000.0 2147483647 1043124179 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0378918647766113
+Result: SAT, 0, , 0, 1043124179
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp "" 1000000000.0 2147483647 1043124179 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.85557746887207
+Result: SAT, 0, , 0, 1043124179
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp "" 1000000000.0 2147483647 222969534 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.080991268157959
+Result: SAT, 0, , 0, 222969534
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp "" 1000000000.0 2147483647 222969534 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.566222429275513
+Result: SAT, 0, , 0, 222969534
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp "" 1000000000.0 2147483647 1800835623 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.698108434677124
+Result: SAT, 0, , 0, 1800835623
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp "" 1000000000.0 2147483647 1800835623 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0904462337493896
+Result: SAT, 0, , 0, 1800835623
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp "" 1000000000.0 2147483647 1188152034 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.490779638290405
+Result: SAT, 0, , 0, 1188152034
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp "" 1000000000.0 2147483647 1188152034 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.838216066360474
+Result: SAT, 0, , 0, 1188152034
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp "" 1000000000.0 2147483647 1172017490 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0577576160430908
+Result: SAT, 0, , 0, 1172017490
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp "" 1000000000.0 2147483647 1172017490 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.618233680725098
+Result: SAT, 0, , 0, 1172017490
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp "" 1000000000.0 2147483647 1098966228 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.642976760864258
+Result: SAT, 0, , 0, 1098966228
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp "" 1000000000.0 2147483647 1098966228 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.495470762252808
+Result: SAT, 0, , 0, 1098966228
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp "" 1000000000.0 2147483647 1148441699 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.562467098236084
+Result: SAT, 0, , 0, 1148441699
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp "" 1000000000.0 2147483647 1148441699 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.540165662765503
+Result: SAT, 0, , 0, 1148441699
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp "" 1000000000.0 2147483647 1370959637 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.249982595443726
+Result: SAT, 0, , 0, 1370959637
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp "" 1000000000.0 2147483647 1370959637 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.967350006103516
+Result: SAT, 0, , 0, 1370959637
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp "" 1000000000.0 2147483647 1756953519 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0144860744476318
+Result: SAT, 0, , 0, 1756953519
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp "" 1000000000.0 2147483647 1756953519 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.055727481842041
+Result: SAT, 0, , 0, 1756953519
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp "" 1000000000.0 2147483647 783358374 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.136709690093994
+Result: SAT, 0, , 0, 783358374
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp "" 1000000000.0 2147483647 783358374 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.802277803421021
+Result: SAT, 0, , 0, 783358374
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1437744398 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.920243740081787
+Result: SAT, 0, , 0, 1437744398
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1437744398 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.426322937011719
+Result: SAT, 0, , 0, 1437744398
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp "" 1000000000.0 2147483647 186045902 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.284838199615479
+Result: SAT, 0, , 0, 186045902
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp "" 1000000000.0 2147483647 186045902 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.525371193885803
+Result: SAT, 0, , 0, 186045902
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp "" 1000000000.0 2147483647 1144484353 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.667670130729675
+Result: SAT, 0, , 0, 1144484353
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp "" 1000000000.0 2147483647 1144484353 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.250189304351807
+Result: SAT, 0, , 0, 1144484353
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp "" 1000000000.0 2147483647 352357573 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.659948348999023
+Result: SAT, 0, , 0, 352357573
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp "" 1000000000.0 2147483647 352357573 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.344195365905762
+Result: SAT, 0, , 0, 352357573
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp "" 1000000000.0 2147483647 1766848507 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.826089978218079
+Result: SAT, 0, , 0, 1766848507
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp "" 1000000000.0 2147483647 1766848507 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.108332633972168
+Result: SAT, 0, , 0, 1766848507
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp "" 1000000000.0 2147483647 2141509312 -INERTIA 0.5 -FACT_COG 0.5 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.515942811965942
+Result: SAT, 0, , 0, 2141509312
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp "" 1000000000.0 2147483647 2141509312 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.462403297424316
+Result: SAT, 0, , 0, 2141509312
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7287.nsp "" 1000000000.0 2147483647 934158224 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.224858522415161
+Result: SAT, 0, , 0, 934158224
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7287.nsp "" 1000000000.0 2147483647 169484389 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.420272707939148
+Result: SAT, 0, , 0, 169484389
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7287.nsp "" 1000000000.0 2147483647 577163411 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.207163333892822
+Result: SAT, 0, , 0, 577163411
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1906284712 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.138736367225647
+Result: SAT, 0, , 0, 1906284712
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1791502113 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.821618318557739
+Result: SAT, 0, , 0, 1791502113
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 952386781 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.204794764518738
+Result: SAT, 0, , 0, 952386781
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7288.nsp "" 1000000000.0 2147483647 1731727971 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.501869916915894
+Result: SAT, 0, , 0, 1731727971
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp "" 1000000000.0 2147483647 1159855394 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.547000885009766
+Result: SAT, 0, , 0, 1159855394
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp "" 1000000000.0 2147483647 2011797409 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.26083779335022
+Result: SAT, 0, , 0, 2011797409
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7289.nsp "" 1000000000.0 2147483647 1246376477 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.739856958389282
+Result: SAT, 0, , 0, 1246376477
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp "" 1000000000.0 2147483647 1625310166 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.156322479248047
+Result: SAT, 0, , 0, 1625310166
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp "" 1000000000.0 2147483647 782694215 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.427340149879456
+Result: SAT, 0, , 0, 782694215
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7288.nsp "" 1000000000.0 2147483647 653854527 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0380401611328125
+Result: SAT, 0, , 0, 653854527
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp "" 1000000000.0 2147483647 642504463 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.866212606430054
+Result: SAT, 0, , 0, 642504463
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp "" 1000000000.0 2147483647 39870746 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.83790397644043
+Result: SAT, 0, , 0, 39870746
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7287.nsp "" 1000000000.0 2147483647 499075818 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.525338172912598
+Result: SAT, 0, , 0, 499075818
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp "" 1000000000.0 2147483647 379443316 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.864428400993347
+Result: SAT, 0, , 0, 379443316
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp "" 1000000000.0 2147483647 2074496271 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.541431784629822
+Result: SAT, 0, , 0, 2074496271
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7289.nsp "" 1000000000.0 2147483647 712627918 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.743863821029663
+Result: SAT, 0, , 0, 712627918
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp "" 1000000000.0 2147483647 1102913579 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.367751717567444
+Result: SAT, 0, , 0, 1102913579
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp "" 1000000000.0 2147483647 1836808362 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.731854200363159
+Result: SAT, 0, , 0, 1836808362
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7290.nsp "" 1000000000.0 2147483647 366145408 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0986089706420898
+Result: SAT, 0, , 0, 366145408
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp "" 1000000000.0 2147483647 841249884 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0473988056182861
+Result: SAT, 0, , 0, 841249884
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp "" 1000000000.0 2147483647 565122244 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.520472645759583
+Result: SAT, 0, , 0, 565122244
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp "" 1000000000.0 2147483647 1783562234 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.711705684661865
+Result: SAT, 0, , 0, 1783562234
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7287.nsp "" 1000000000.0 2147483647 749572870 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.025338888168335
+Result: SAT, 0, , 0, 749572870
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp "" 1000000000.0 2147483647 882468192 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.695551633834839
+Result: SAT, 0, , 0, 882468192
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp "" 1000000000.0 2147483647 477294567 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.924180746078491
+Result: SAT, 0, , 0, 477294567
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7290.nsp "" 1000000000.0 2147483647 2135623583 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.436625123023987
+Result: SAT, 0, , 0, 2135623583
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp "" 1000000000.0 2147483647 1627243531 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0970890522003174
+Result: SAT, 0, , 0, 1627243531
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp "" 1000000000.0 2147483647 1291459332 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.596380829811096
+Result: SAT, 0, , 0, 1291459332
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7288.nsp "" 1000000000.0 2147483647 2051235019 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.310500502586365
+Result: SAT, 0, , 0, 2051235019
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp "" 1000000000.0 2147483647 1655535865 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.863172054290771
+Result: SAT, 0, , 0, 1655535865
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp "" 1000000000.0 2147483647 111653215 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.741185903549194
+Result: SAT, 0, , 0, 111653215
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N50/7289.nsp "" 1000000000.0 2147483647 146997204 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.3550044298172
+Result: SAT, 0, , 0, 146997204
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp "" 1000000000.0 2147483647 1398141693 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.4891197681427
+Result: SAT, 0, , 0, 1398141693
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp "" 1000000000.0 2147483647 1893259412 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.710288763046265
+Result: SAT, 0, , 0, 1893259412
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N100/7290.nsp "" 1000000000.0 2147483647 803523149 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.381306886672974
+Result: SAT, 0, , 0, 803523149
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp "" 1000000000.0 2147483647 1524842477 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.493353605270386
+Result: SAT, 0, , 0, 1524842477
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp "" 1000000000.0 2147483647 1698754323 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.870386719703674
+Result: SAT, 0, , 0, 1698754323
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N75/7287.nsp "" 1000000000.0 2147483647 1813204532 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.899057984352112
+Result: SAT, 0, , 0, 1813204532
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp "" 1000000000.0 2147483647 2076820129 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.123394370079041
+Result: SAT, 0, , 0, 2076820129
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp "" 1000000000.0 2147483647 1458435720 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.0132684707641602
+Result: SAT, 0, , 0, 1458435720
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7288.nsp "" 1000000000.0 2147483647 1050843398 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.12628448009491
+Result: SAT, 0, , 0, 1050843398
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp "" 1000000000.0 2147483647 1155237810 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.45781409740448
+Result: SAT, 0, , 0, 1155237810
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp "" 1000000000.0 2147483647 1234983153 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.887389302253723
+Result: SAT, 0, , 0, 1234983153
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7289.nsp "" 1000000000.0 2147483647 1353095677 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.369656562805176
+Result: SAT, 0, , 0, 1353095677
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp "" 1000000000.0 2147483647 529660660 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.746979236602783
+Result: SAT, 0, , 0, 529660660
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp "" 1000000000.0 2147483647 772743401 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.346356153488159
+Result: SAT, 0, , 0, 772743401
+
+sh sh-algoritmo.sh /home/diepeerk/Escritorio/sintonizadores/paramILS/instancias/N25/7290.nsp "" 1000000000.0 2147483647 1411972842 -INERTIA 0.2 -FACT_COG 0.2 -FACT_SOC 0.5 > /tmp/tmp-2010-11-0320:46:32-0.704694747924805
+Result: SAT, 0, , 0, 1411972842
+

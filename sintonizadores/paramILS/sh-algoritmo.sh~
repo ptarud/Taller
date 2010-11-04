@@ -1,0 +1,83 @@
+#!/bin/bash
+
+#if [ $# -lt 5 ]; then
+#  echo "Cantidad invalida de parametros";
+#  exit -1
+#fi
+
+cnf_filename=$1
+instance_specifics=$2
+cutoff_time=$3
+cutoff_length=$4
+seed=$5
+
+shift 5
+
+#echo $@
+
+output_filename="resultados.txt"
+rm -rf ${output_filename}
+
+repeticiones=1
+tiempo_max=0
+iteraciones=200
+tripw=0
+repw=0
+sini=1
+fact_mut=0
+res=1
+ord=0
+rl=0
+rep_size=10
+tasa_reem=0.2
+fp_trip=0.5
+fp_rep=0.5
+
+
+TASA_CL=0
+FACT_CL=0
+
+
+while [ $# != 0 ]; do
+    flag="$1"
+    case "$flag" in
+        -TASA_CL) if [ $# -gt 1 ]; then
+              arg="$2"
+              shift
+              cr=$arg
+              #echo "You supplied an argument for the -pm flag: $arg"
+            #else
+              #echo "You did not provide an argument for the -pm flag"
+            fi
+            ;;
+        -FACT_CL) if [ $# -gt 1 ]; then
+              arg="$2"
+              shift
+              mr=$arg
+              #echo "You supplied an argument for the -pm flag: $arg"
+            #else
+              #echo "You did not provide an argument for the -pm flag"
+            fi
+            ;;
+       
+        *) echo "Unrecognized flag or argument: $flag"
+            ;;
+        esac
+    shift
+done
+
+#linea de codigo a especificar 
+for archivo in $( ls $cnf_filename |grep .txt); do
+    echo "./acis ${repeticiones} ${tiempo_max} ${iteraciones} ${rep_size} ${TASA_CL} ${FACT_CL} ${tasa_reem} ${fp_trip} ${fr_rep} ${sini} ${rl} ${fact_mut} ${ord} ${cnf_filename} ${output_filename} ${res} ${seed}"
+   ./acis ${repeticiones} ${tiempo_max} ${iteraciones} ${rep_size}} ${TASA_CL} ${FACT_CL} ${tasa_reem} ${fp_trip} ${fp_rep} ${sini} ${rl} ${fact_mut} ${ord} ${cnf_filename} ${output_filename} ${res} ${seed}
+
+done
+
+
+solved="SAT"
+runlength=`cat ${output_filename}`
+runtime=0
+best_sol=0
+
+
+echo "Result for ParamILS: ${solved}, ${runtime}, ${runlength}, ${best_sol}, ${seed}"

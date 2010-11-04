@@ -379,13 +379,6 @@ int particle::maxNightShifts(int PESO){
     return fitness;
 }
 
-/*void particle::fixDay2(){
-
-
-
-
-} */
-
 /*restriccion de preferencia de las enfermeras (blanda)*/
 int particle::preferenceConstraint(int **preference)
 {
