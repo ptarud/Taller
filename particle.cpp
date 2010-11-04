@@ -62,6 +62,10 @@ particle::~particle()
         free(position[cN]);
         free(l_best[cN]);
      }
+     /*libero memoria de matriz shiftsPerDayArray*/
+     for(int cN = 0; cN < nurses ; cN++){
+        free(shiftsPerDayArray[cN]);
+     }
 
      free(position);
      free(l_best);
@@ -110,7 +114,8 @@ void particle::init(){
 
         }
     }
-    l_fitness = getFitness(); //el fitness inicial es su mejor local 
+    calculateFitness();
+    l_fitness = getFitness(); //el fitness inicial es su mejor local
 
     /*inicializo v_0 (probabilidad de cambiar a 0) y v_1 (probabilidad de cambiar a 1)*/
     v_0 = (float) rand()/RAND_MAX;
@@ -124,13 +129,12 @@ void particle::calculateFitness()
     minDaysOffPerWeek();
     
     /*sumatoria de restricciones blandas y duras si se viola una dura es arreglada por movimiento en la sgte iteracion */
-    fitness =  daysOffTogether(10) + preferenceConstraint(preference) + maxShiftsPerDay(90) + maxNightShifts(45);
+    fitness =  daysOffTogether(10) + preferenceConstraint(preference) + maxNightShifts(45)+ maxShiftsPerDay(160);
 
 }
 
 int particle::getFitness()
 {
-    calculateFitness();
     return fitness;
 }
 /*restriccion de cobertura (dura)*/
@@ -211,7 +215,6 @@ int particle::daysOffTogether(int PESO)
                     hasFirst = false;
                     times++;
                 }
-                shiftsPerDayArray[cN-1][day] = sum; //le paso cuantos turnos tiene para eso dia 
                 day++;
                 count = 0;
                 sum = 0; //como ya termino un dia hago sum = 0;
@@ -226,14 +229,16 @@ int particle::daysOffTogether(int PESO)
 }
 
 void particle::minDaysOffPerWeek(){
-    int count;
+    int count,day;
     int daysOff,sum;
     for(int cN = 1; cN <=nurses ; cN++){
-        daysOff = 0; sum = 0; count = 0;
+        daysOff = 0; sum = 0; count = 0; day = 0;
         for(int cDS = 0; cDS < days*shifts ; cDS++){
             count++;
             sum = position[cN][cDS] + sum;
             if(count == shifts){ //quiere decir que ya termino un dia
+                shiftsPerDayArray[cN-1][day] = sum;
+                day++;
                 count = 0;
                 if(sum == 0){
                     daysOff++;
@@ -256,11 +261,9 @@ void particle::improveResult2(){ /*swap turno de un dia con otra enfermera q cum
         day = 0; sum = 0; count = 0;
         /*mientras la enfermera no cumple la restriccion le cambio un dia con una enfermera que si cumpla y pueda*/
         while(daysOffArray[src] < MIN_DAYS_OFF){
-            daysOffArray[src] = daysOffArray[src] + 1;
             /*busco una enfermera que tenga mas dias libres y le hago un swap de ese dia*/
             for(int dest = 0; dest < nurses ; dest++){
-                while(daysOffArray[dest] > MIN_DAYS_OFF){
-                    daysOffArray[dest] = daysOffArray[dest] - 1;
+                if(daysOffArray[dest] > MIN_DAYS_OFF){
                     swapDay(src,dest);
                 }
             }
@@ -268,29 +271,26 @@ void particle::improveResult2(){ /*swap turno de un dia con otra enfermera q cum
     }
 }
 
+/*busco enfermera */
 void particle::swapDay(int nurseSrc, int nurseDest){
-    
-   /*busco un dia y hago el swap de ese dia*/
-    int count = 0;
-    int sum = 0;
-    int day = 0;
-    for(int cDS = 0; cDS < days*shifts ; cDS++){
-        count++;
-        sum = sum + position[nurseDest+1][cDS];
-        if(count == shifts){
-            count = 0;
-            if(sum == 0){
-                for(int j = 0; j < shifts; j++){
-                    position[nurseDest+1][day*shifts + j] = position[nurseSrc+1][day*shifts + j];
-                    position[nurseSrc+1][day*shifts + j] = 0;
-                }
-                return;
+    /*busco dia que tenga off para cambiar*/
+    for(int d = 0; d < days ; d++){
+        if(shiftsPerDayArray[nurseDest][d] == 0){
+            shiftsPerDayArray[nurseDest][d] = shiftsPerDayArray[nurseDest][d] + 1;
+            shiftsPerDayArray[nurseSrc][d] = shiftsPerDayArray[nurseSrc][d] - 1;
+            /*cambio un turno del dia*/
+            for(int s = 0; s < shifts ; s++){
+                int aux;
+                aux = position[nurseSrc+1][d*shifts + s];
+                position[nurseSrc+1][d*shifts + s] = position[nurseDest+1][d*shifts + s];
+                position[nurseDest+1][d*shifts + s] = aux;
+                
             }
-            day++;
-            sum = 0;
         }
-
     }
+    daysOffArray[nurseSrc] = daysOffArray[nurseSrc] + 1;
+    daysOffArray[nurseDest] = daysOffArray[nurseDest] - 1;
+
 
 }
 /*restriccion de maximos turnos por dia definido arriba*/
@@ -326,7 +326,7 @@ void particle::fixDay(int nurse, int day, int borrar){
     while(borrar > 0){
         borrar--;
         /*busco alguna enfermera que tenga mas de los minimos dias off dias offs*/
-        for(int cN = nurse+1; cN <= nurses; cN++){
+        for(int cN = 1; cN <= nurses; cN++){
             d = 0; sum = 0; count = 0; cambie = false;
             if(daysOffArray[cN - 1] > MIN_DAYS_OFF){
                 for(int cDS = 0; cDS < days*shifts ; cDS++){
@@ -501,6 +501,7 @@ void particle::update(int **g_best)
                 }
             }
             /*comparo si la que obtuve es mejor que la anterior*/
+            calculateFitness();
             if(getFitness() < l_fitness){
                 l_fitness = getFitness(); //guardo el fitness del mejor local
                 /*copio la nueva solcion en mi mejor local (l_best)*/

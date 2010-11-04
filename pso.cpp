@@ -10,7 +10,6 @@
 #include <iostream>
 #include "particle.h"
 #include <cstdio>
-//#define ITERATIONS 200
 
 pso::pso(int nurses, int days, int shifts)
 {
@@ -91,6 +90,10 @@ void pso::run(int SIZE, int ITERATIONS)
 
     /*itero ITERATIONS veces*/
     for(t = 0 ; t < ITERATIONS ; t++){
+        /*actualizo velocidad y posicion de cada particula del enjambre */
+        for(s=0; s < SIZE; s++){
+            swarm[s]->update(g_best);
+        }
         /*obtengo el indice del mejor global y lo guardo en s_best*/
         for(s=0; s < SIZE; s++){
             if(swarm[s]->getFitness() < g_fitness){
@@ -103,10 +106,6 @@ void pso::run(int SIZE, int ITERATIONS)
                     }
                 }
             }
-        }
-       /*actualizo velocidad y posicion de cada particula del enjambre */
-        for(s=0; s < SIZE; s++){
-            swarm[s]->update(g_best);
         }
     }
     /*imprimo resultados*/
