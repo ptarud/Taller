@@ -11,7 +11,7 @@
 #include "particle.h"
 #include <cstdio>
 #include <fstream>
-
+#include <ctime>
 using namespace std;
 
 pso::pso(int nurses, int days, int shifts)
@@ -70,6 +70,8 @@ void pso::setC2(float value)
 
 void pso::run(int SIZE, int ITERATIONS)
 {
+    clock_t start = clock();
+    
     /*       INICIALIZO PSO            */
     particle *swarm[SIZE];
     int s, t, s_best, cN, cDS;
@@ -128,7 +130,7 @@ void pso::run(int SIZE, int ITERATIONS)
         delete swarm[s];
    }
 
-
+   printf ( "Tiempo de procesamiento: %f [segs]\n", ((double)clock() - start)/CLOCKS_PER_SEC);
 }
 
 void pso::setPreferenceMatrix(int **preference)
