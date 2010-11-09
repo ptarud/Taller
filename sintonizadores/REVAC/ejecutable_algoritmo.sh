@@ -28,8 +28,8 @@ shift 3
 #tasa_reem=0.2
 #fp_trip=0.5
 #fp_rep=0.5
-ITERS=50
-size=50
+ITERS=100
+size=100
 
 FACT_SOC=0
 FACT_COG=0

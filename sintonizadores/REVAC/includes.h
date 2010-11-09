@@ -16,10 +16,10 @@
 
 using namespace std;
 
-#define MAX_ITER 100
-#define M 100
-#define N 50
-#define H 10
+#define MAX_ITER 20
+#define M 10
+#define N 5
+#define H 5
 
 
 

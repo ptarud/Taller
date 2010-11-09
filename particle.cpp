@@ -146,6 +146,7 @@ void particle::cobertureConstraint(int **coverage)
     
     for(cD = 0; cD < days; cD++){
         for(cS = 0; cS < shifts ; cS++){
+            count = 0;
             /*Sumo todas las enfermeras de mi solucion y comparo con la matriz de cobertura*/
             for(cN = 1; cN <=nurses ; cN++){ //parto de 1 porq la primera fila imprimo numeros ver mejor la matriz
                 count =  count + position[cN][shifts*cD+cS]; //shifts*cD+cS por la forma de la matriz (revisar matriz)
@@ -155,15 +156,32 @@ void particle::cobertureConstraint(int **coverage)
                 /*mejoro solucion*/
                 int borrar = count - coverage[cD][cS];
                 improveResult1(borrar,cD,cS);
+            }if(count < coverage[cD][cS]){
+                int times = coverage[cD][cS] - count;
+                makeFeasible(times,cD,cS);
             }
-            count = 0;
-            
         }
     }
 }
+void particle::makeFeasible(int times, int day, int shift){
+
+    int cN = 1;
+    while(times > 0 && cN <= nurses){
+        if(position[cN][shifts*day + shift] == 0){
+            position[cN][shifts*day + shift] = 1;
+            times--;
+        }
+        cN++;
+    }
+}
+
+
+
+
+
 void particle::improveResult1(int borrar, int D, int S){
     
-    int sum;
+    int sum =0;
     //int borrados = 0;
     for(int cN = nurses; cN >=1 ; cN--){
         sum = 0;

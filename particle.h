@@ -38,6 +38,7 @@ public:
     void repairFitness(int,int,int);
     //void fixDay2();
     int maxNightShifts(int);
+    void makeFeasible(int,int,int);
 private:
     int **position, **l_best;
     int days, shifts, nurses, fitness, l_fitness;
