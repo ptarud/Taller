@@ -112,7 +112,7 @@ void pso::run(int SIZE, int ITERATIONS)
                 }
             }
         }
-        printf("iteration : %d\t bestFitness: %d\n",t,g_fitness);
+        //printf("iteration : %d\t bestFitness: %d\n",t,g_fitness);
     }
     /*imprimo resultados*/
     printf("\t\t\t\tPREFERENCE\n\n");
