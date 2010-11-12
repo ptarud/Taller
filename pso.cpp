@@ -112,10 +112,11 @@ void pso::run(int SIZE, int ITERATIONS)
                 }
             }
         }
+        printf("iteration : %d\t bestFitness: %d\n",t,g_fitness);
     }
     /*imprimo resultados*/
-    //printf("PREFERENCE MATRIX\n");
-    //swarm[0]->printPreferenceMatrix();
+    printf("\t\t\t\tPREFERENCE\n\n");
+    swarm[0]->printPreferenceMatrix();
     printf("\t\t\t\tBEST SOLUTION\n\n");
     printf("\tFitness: %d\n\n",g_fitness);
     printf("\tSolution:");

@@ -16,9 +16,9 @@
 
 using namespace std;
 
-#define MAX_ITER 20
-#define M 10
-#define N 5
+#define MAX_ITER 100
+#define M 50
+#define N 20
 #define H 5
 
 

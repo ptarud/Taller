@@ -140,8 +140,8 @@ int particle::getFitness()
 /*restriccion de cobertura (dura)*/
 void particle::cobertureConstraint(int **coverage)
 {
-    int fitness, cN, cD, cS, count;
-    fitness = 0;
+    int cN, cD, cS, count;
+    this->fitness = 0;
     count = 0;
     
     for(cD = 0; cD < days; cD++){
@@ -156,8 +156,12 @@ void particle::cobertureConstraint(int **coverage)
                 /*mejoro solucion*/
                 int borrar = count - coverage[cD][cS];
                 improveResult1(borrar,cD,cS);
-            }if(count < coverage[cD][cS]){
+                this->fitness = this->fitness + 300;
+
+            }
+            if(count < coverage[cD][cS]){
                 int times = coverage[cD][cS] - count;
+                this->fitness = this->fitness + 500;
                 makeFeasible(times,cD,cS);
             }
         }
@@ -165,34 +169,25 @@ void particle::cobertureConstraint(int **coverage)
 }
 void particle::makeFeasible(int times, int day, int shift){
 
-    int cN = 1;
-    while(times > 0 && cN <= nurses){
+    int cN;
+    while(times > 0){
+        cN = (rand() % nurses) +1; //busco enfermera aleatoria
         if(position[cN][shifts*day + shift] == 0){
             position[cN][shifts*day + shift] = 1;
             times--;
         }
-        cN++;
     }
 }
 
-
-
-
-
 void particle::improveResult1(int borrar, int D, int S){
     
-    int sum =0;
-    //int borrados = 0;
-    for(int cN = nurses; cN >=1 ; cN--){
-        sum = 0;
-        for(int cS = 0; cS < shifts; cS++){
-            sum = sum + position[cN][shifts*D+cS];
-        }
-        if(borrar > 0){
-            if(position[cN][shifts*D+S] == 1){
-                borrar--;
-                position[cN][shifts*D+S] = 0;
-            }
+    int cN;
+
+    while(borrar > 0){
+        cN = (rand() % nurses) + 1; //busco enfermera aleatoria
+        if(position[cN][shifts*D+S] == 1){
+            borrar--;
+            position[cN][shifts*D+S] = 0;
         }
     }
 }
@@ -274,16 +269,17 @@ void particle::improveResult2(){ /*swap turno de un dia con otra enfermera q cum
 
     int sum, day;
     int count = 0;
-    int src;
+    int src,dest;
     for(src = 0; src < nurses ; src++){
         day = 0; sum = 0; count = 0;
         /*mientras la enfermera no cumple la restriccion le cambio un dia con una enfermera que si cumpla y pueda*/
         while(daysOffArray[src] < MIN_DAYS_OFF){
-            /*busco una enfermera que tenga mas dias libres y le hago un swap de ese dia*/
-            for(int dest = 0; dest < nurses ; dest++){
+            /*busco una enfermera aleatoriamente que tenga mas dias libres y le hago un swap de ese dia*/
+            dest = (rand() % nurses) + 1;
+            //for(int dest = 0; dest < nurses ; dest++){
                 if(daysOffArray[dest] > MIN_DAYS_OFF){
                     swapDay(src,dest);
-                }
+              //  }
             }
         }
     }
@@ -338,35 +334,24 @@ int particle::maxShiftsPerDay(int PESO){
 
 /*Reparo día que tenga mas de los turnos permitidos diarios*/
 void particle::fixDay(int nurse, int day, int borrar){
-    int d,sum,count;
+    int d,sum,count,cN;
     bool cambie;
     /*mientras no he cambiado todos los turnos*/
     while(borrar > 0){
-        borrar--;
-        /*busco alguna enfermera que tenga mas de los minimos dias off dias offs*/
-        for(int cN = 1; cN <= nurses; cN++){
-            d = 0; sum = 0; count = 0; cambie = false;
-            if(daysOffArray[cN - 1] > MIN_DAYS_OFF){
-                for(int cDS = 0; cDS < days*shifts ; cDS++){
-                    count++;
-                    sum = position[cN][cDS] + sum;
-                    if(count == shifts){
-                        /*si es el mismo dia que quiero cambiar y es libre */
-                        if(day == d && sum == 0){
-                            /*lo cambio*/
-                            for(int s = 0; s < shifts; s++){
-                                if(position[nurse][d*shifts + s] == 1 && !cambie){
-                                    position[nurse][d*shifts + s] = 0;
-                                    position[cN][d*shifts + s] = 1;
-                                    daysOffArray[cN-1] = daysOffArray[cN-1] - 1;
-                                    cambie = true;
-                                }
-                            }
+        /*busco alguna enfermera aleatoriamente que tenga mas de los minimos dias off*/
+        cN = (rand() % nurses) + 1;
+        if(daysOffArray[cN - 1] > MIN_DAYS_OFF){
+            for(d = 0; d < days ; d++){
+                cambie = false;
+                if(shiftsPerDayArray[cN-1][d] == 0 && d == day){
+                    for(int s = 0; s < shifts; s++){
+                        if(position[nurse][d*shifts + s] == 1 && !cambie){
+                            position[nurse][d*shifts + s] = 0;
+                            position[cN][d*shifts + s] = 1;
+                            daysOffArray[cN-1] = daysOffArray[cN-1] - 1;
+                            cambie = true;
+                            borrar--;
                         }
-                        sum = 0;
-                        count = 0;
-                        d++;
-                        cambie = false;
                     }
                 }
             }
@@ -414,13 +399,10 @@ int particle::preferenceConstraint(int **preference)
             if(position[cN][cDS] == 1){
                 if(preference[cN-1][cDS] == 3){
                     fitness = fitness + 5;
-                    repairFitness(day,cN,count-1);
                 }else if(preference[cN-1][cDS] == 2){
                     fitness = fitness + 10;
-                    repairFitness(day,cN,count-1);
                 }else if(preference[cN-1][cDS] == 1){
                     fitness = fitness + 15;
-                    repairFitness(day,cN,count-1);
                 }
             }
         }
