@@ -13,6 +13,8 @@
 #include <fstream>
 #include <ctime>
 using namespace std;
+#define INERTIA_MAX 1
+#define INERTIA_MIN 0
 
 pso::pso(int nurses, int days, int shifts)
 {
@@ -71,7 +73,8 @@ void pso::setC2(float value)
 void pso::run(int SIZE, int ITERATIONS)
 {
     clock_t start = clock();
-    
+    int iter;
+
     /*       INICIALIZO PSO            */
     particle *swarm[SIZE];
     int s, t, s_best, cN, cDS;
@@ -92,16 +95,50 @@ void pso::run(int SIZE, int ITERATIONS)
             g_best[cN][cDS] = swarm[s_best]->getPositionMatrix()[cN][cDS];
         }
     }
-
+    
+    iter = 0;
     /*itero ITERATIONS veces*/
     for(t = 0 ; t < ITERATIONS ; t++){
+        /*aplico control de parametros a la inercia y a los factores r1 y r2*/
+        //printf("Iteracion %d\tGBest = %d\n",t,g_fitness);
+        iter++;
+        if(iter == ITERATIONS/17){
+            float random,random2,random3;
+            iter = 0;
+
+            if(c1 > 0.5){
+                random = (float) rand()/RAND_MAX;
+                c1 = c1 - random*c1;
+            }else{
+                random = (float) rand()/RAND_MAX;
+                c1 = c1 + random*c1;
+            }
+            if(c2 > 0.5){
+                random2 = (float) rand()/RAND_MAX;
+                c2 = c2 - random2*c2;
+            }else{
+                random2 = (float) rand()/RAND_MAX;
+                c2 = c2 + random2*c2;
+            }
+            if(w > 0.5){
+                random3 = (float) rand()/RAND_MAX;
+                w = w - random3*w;
+            }else{
+                random3 = (float) rand()/RAND_MAX;
+                w = w + random3*w;
+            }
+            //printf("CAMBIE a c1 = %f ; c2 = %f ; w = %f\n",c1,c2,w);
+            
+        }
         /*actualizo velocidad y posicion de cada particula del enjambre */
         for(s=0; s < SIZE; s++){
+            swarm[s]->setPsoParameters(c1,c2,r1,r2,w);
             swarm[s]->update(g_best);
         }
         /*obtengo el indice del mejor global y lo guardo en s_best*/
         for(s=0; s < SIZE; s++){
             if(swarm[s]->getFitness() < g_fitness){
+                iter = 0;
                 s_best = s;
                 g_fitness = swarm[s]->getFitness();
                 /*copio la informacion del mejor global a g_best */
@@ -112,11 +149,11 @@ void pso::run(int SIZE, int ITERATIONS)
                 }
             }
         }
-        //printf("iteration : %d\t bestFitness: %d\n",t,g_fitness);
+        
     }
     /*imprimo resultados*/
-    printf("\t\t\t\tPREFERENCE\n\n");
-    swarm[0]->printPreferenceMatrix();
+    //printf("\t\t\t\tPREFERENCE\n\n");
+    //swarm[0]->printPreferenceMatrix();
     printf("\t\t\t\tBEST SOLUTION\n\n");
     printf("\tFitness: %d\n\n",g_fitness);
     printf("\tSolution:");

@@ -334,7 +334,7 @@ int particle::maxShiftsPerDay(int PESO){
 
 /*Reparo día que tenga mas de los turnos permitidos diarios*/
 void particle::fixDay(int nurse, int day, int borrar){
-    int d,sum,count,cN;
+    int d,cN;
     bool cambie;
     /*mientras no he cambiado todos los turnos*/
     while(borrar > 0){
