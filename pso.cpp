@@ -100,9 +100,9 @@ void pso::run(int SIZE, int ITERATIONS)
     /*itero ITERATIONS veces*/
     for(t = 0 ; t < ITERATIONS ; t++){
         /*aplico control de parametros a la inercia y a los factores r1 y r2*/
-        //printf("Iteracion %d\tGBest = %d\n",t,g_fitness);
+        printf("Iteracion %d\tGBest = %d\n",t,g_fitness);
         iter++;
-        if(iter == ITERATIONS/17){
+        if(iter == ITERATIONS*0.05){
             float random,random2,random3;
             iter = 0;
 
@@ -127,7 +127,7 @@ void pso::run(int SIZE, int ITERATIONS)
                 random3 = (float) rand()/RAND_MAX;
                 w = w + random3*w;
             }
-            //printf("CAMBIE a c1 = %f ; c2 = %f ; w = %f\n",c1,c2,w);
+            printf("CAMBIE a c1 = %f ; c2 = %f ; w = %f\n",c1,c2,w);
             
         }
         /*actualizo velocidad y posicion de cada particula del enjambre */

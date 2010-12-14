@@ -16,7 +16,7 @@ using namespace std;
 
 int main(int argc, char** argv)
 {
-    srand((unsigned)time(NULL)); //inicializo funcion random
+    srand(1); //inicializo funcion random
     if(argc == 7){
         instance instancia;
         instancia.read(argv[6]);
